@@ -1,0 +1,55 @@
+NYC_Trees = read.csv('C:/Users/Riya Ketan Vaze/Desktop/NYC_Trees.csv')
+NYC_Trees
+data<-NYC_Trees
+mean(data[,4])
+mean(Height)
+attach(data)
+mean(Height)
+summary(Height)
+summary(Native)
+summary(data)
+mean(Height)
+median(Height)
+min(Height)
+max(Height)
+quantile(Height)
+quantile(Height, c(.25, .75))
+var(Height)
+sd(Height)
+
+
+
+
+Grades=read.csv('C:/Users/Riya Ketan Vaze/Desktop/class-grades.csv')
+attach(Grades)
+is.na(Grades)
+mean(Final)
+mean(Final, na.rm=T)
+Final_NA_removed= na.omit(Final)
+length(Final)
+length(Final_NA_removed)
+mean(Final_NA_removed)
+mean(Diameter);mean(Height);mean(Age);mean(FoliageDensity);mean(CanopyArea);mean(Compensatory.Value)
+apply(data[,3:8],2,mean)
+apply(data[,3:8],2,sd)
+apply(data[,3:8],2,summary)
+apply(data[,1:2],2,mean)
+apply(data[,3],2,mean)
+tapply(FoliageDensity,Condition,summary)
+aggregate(data[c("FoliageDensity", "Compensatory.Value")], list(Condition),summary)
+by(data[c("FoliageDensity", "Compensatory.Value")], Condition, summary)
+table(Condition)
+table(Condition)/length(Condition)
+table(Condition)/length(Condition)*100
+table(Condition, Native)
+mytable= table(Condition, Native)
+mytable
+#Computing the marginal tables (the second arguumebt is 1 for row totals and 2 for column totals)
+margin.table(mytable,1)
+margin.table(mytable,2)
+prop.table(mytable,1)
+prop.table(mytable,2)
+prop.table(mytable,1)*100
+prop.table(mytable,2)*100
+detach(data)
+attach(Grades)
